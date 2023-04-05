@@ -1,0 +1,22 @@
+{% extends 'base.html' %}  
+  
+{% block content %}  
+    <ul class="nav flex-column">  
+        <!-- Iterate over object_list -->  
+        
+        {% for object in all_books %}  
+
+        <!-- Display Objects -->  
+        <li class="nav-item">Book Name : {{ object.name }}</li>  
+        <li class="nav-item">Book Author : {{ object.author}}</li>  
+        <li class="nav-item">Book Quantity: {{ object.qty }}</li>  
+        <li class="nav-item"> Book Price: {{ object.price }}</li>  
+  
+        <hr/>  
+        <!-- If object_list is empty -->  
+        {% empty %}  
+        <li class="nav-item">No Record Found</li>  
+        {% endfor %}  
+    </ul>  
+  
+{% endblock content %}  

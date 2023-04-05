@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Library Page</title>
+</head>
+<style>
+    .required::before{color: rgb(245, 15, 15); content: " *";}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<body>
+<h1>Welcome to Library Page</h1><br>
+<form method="post" action="{% url 'book_form' %}">
+    {% csrf_token %}
+    <!-- {{form}} -->   <!-- normal form -->
+    {{form.as_p}}   <!-- paragraph form -->
+
+    <input type = "submit" class="btn btn-primary" value="Create Book" name="create_book"><br><br>
+        <!-- {{per_name}}    calling context from views.py -->
+
+</form>
+<a href="/showbook/" class="btn btn-danger">Show Active book</a>   
+<a href="/inactivebook/" class = "btn btn-warning">Show Inactive book</a>   
